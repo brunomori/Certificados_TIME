@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios-filled/100/000000/xbox-b.png">
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+
+
+
+    <title>Document</title>
+    <style>
+        body {
+            -webkit-text-stroke-width: 0.1px;
+            -webkit-text-stroke-color: #000;
+            color: white;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQv2ByruHxXWMpUIRh9F9JFlihzv9_VIH_Kcg&usqp=CAU);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 17px;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+
+
+
+        .box {
+           
+            font-weight: bold;
+            display: block;
+            min-width: 190px;
+            margin: 8px;
+            background-color: white;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: rgba(126, 126, 126, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+
+
+        fieldset {
+            
+            border-radius: 5px;
+            box-shadow: rgba(126, 126, 126, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+
+        h3 {
+            
+            text-align: center;
+            font-size: 25px;
+            height: 10px;
+            margin-bottom: 0px;
+            margin-top: 0px;
+            
+        
+        }
+
+
+
+        input[type="date"] {
+            outline: none;
+            padding: 1px;
+            font-family: "Roboto Mono", monospace;
+            border: none;
+            font-size: 13.5px;
+            border-radius: 5px;
+            ;
+        }
+
+        ::-webkit-calendar-picker-indicator {
+            background-color: #ffffff;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 5px;
+            color: #444;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+
+
+
+        }
+
+        .button:active {
+            border-bottom: 2px solid #0d47a1;
+            top: 4px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        p {
+            text-align: center;
+            font-size: 25px;
+            align-items: center;
+        }
+
+        a {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="https://www.linkedin.com/in/bruno-manzini-mori-a9b138b5/" target="_blank">
+        <h1>Certificados</h1>
+    </a>
+    <fieldset>
+        <div class="wrapper">
+            <div class="box">
+                <div class="stt-box">
+                    <fieldset class="sombra" id="cor">
+                        <h3>Monsta</h3>
+                        <p id="demo"></p>
+                        <button onclick="deadline=null;">Clear</button>
+                        <input type="date" id="data">
+                        <button class="botao" onclick="alterarData()">OK</button>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="stt-box">
+                    <fieldset class=" sombra" id="cor1">
+                        <h3>GET</h3>
+                        <p id="demo1"></p>
+                         <button onclick="dead1=null;">Clear</button> 
+                       <input type="date" id="data1">
+                        <button onclick="alterarData1()">OK</button> 
+                    </fieldset>
+                </div>
+            </div>
+
+
+
+            <div class="box">
+                <div class="stt-box">
+                    <fieldset class=" sombra" id="cor2">
+                        <h3>Zimbra</h3>
+                        <p id="demo2"></p>
+                         <button onclick="dead2=null;">Clear</button> 
+                       <input type="date" id="data2">
+                        <button onclick="alterarData2()">OK</button> 
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="stt-box">
+                    <fieldset class=" sombra" id="cor3">
+                        <h3>SSL Clig</h3>
+                        <p id="demo3"></p>
+                         <button onclick="dead3=null;">Clear</button> -->
+                        <input type="date" id="data3">
+                        <button onclick="alterarData3()">OK</button> -->
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="stt-box">
+                    <fieldset class=" sombra" id="cor4">
+                        <h3>Dominio</h3>
+                        <p id="demo4"></p>
+                         <button onclick="dead4=null;">Clear</button> -->
+                         <input type="date" id="data4">
+                        <button onclick="alterarData4()">OK</button> -->
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</body>
+
+
+
+<script>
+    var deadline = new Date("November 13, 2023 ").getTime(); //ALTERAR AQUI MONSTA//
+
+    var x = setInterval(function () {
+        var now = new Date().getTime();
+        var t = deadline - now;
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        var alerta = (t / (1000 * 60 * 60 * 24));
+
+        document.getElementById("demo").innerHTML = days + " Dias "
+            ;
+        if (t < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+
+
+        }
+
+        else if (alerta < 6) {
+            clearInterval(x);
+            document.getElementById("cor").style.backgroundColor = "rgb(212, 74, 58)";
+
+        }
+
+
+        else if (alerta < 15) {
+            clearInterval(x);
+            document.getElementById("cor").style.backgroundColor = " rgba(228, 190, 24, 0.863) ";
+
+        }
+
+
+
+        else if (alerta > 16) {
+            clearInterval(x);
+            document.getElementById("cor").style.backgroundColor = "rgb(41,156,70)";
+
+        }
+    }, 1000);
+
+    var dead1 = new Date("May 06, 2023 ").getTime();   //ALTERAR AQUI GET//
+
+    var x = setInterval(function () {
+        var now = new Date().getTime();
+        var y = dead1 - now;
+        var days = Math.floor(y / (1000 * 60 * 60 * 24));
+        var alerta1 = (y / (1000 * 60 * 60 * 24));
+        document.getElementById("demo1").innerHTML = days + " Dias "
+            ;
+        if (y < 0) {
+            clearInterval(x);
+            document.getElementById("demo1").innerHTML = "EXPIRED";
+
+        }
+        else if (alerta1 < 6) {
+            clearInterval(x);
+            document.getElementById("cor1").style.backgroundColor = "rgb(212, 74, 58)";
+
+        }
+
+
+        else if (alerta1 < 15) {
+            clearInterval(x);
+            document.getElementById("cor1").style.backgroundColor = " rgba(228, 190, 24, 0.863) ";
+
+        }
+
+
+
+        else if (alerta1 > 16) {
+            clearInterval(x);
+            document.getElementById("cor1").style.backgroundColor ="rgb(41,156,70)";;
+
+        }
+
+
+    }, 1000);
+
+
+    var dead2 = new Date("April 20, 2023 ").getTime();   //ALTERAR AQUI EMAIL//
+
+    var x = setInterval(function () {
+        var now = new Date().getTime();
+        var z = dead2 - now;
+        var days = Math.floor(z / (1000 * 60 * 60 * 24));
+        var alerta2 = (z / (1000 * 60 * 60 * 24));
+
+
+        document.getElementById("demo2").innerHTML = days + " Dias "
+            ;
+        if (z < 0) {
+            clearInterval(x);
+            document.getElementById("demo2").innerHTML = "EXPIRED";
+        }
+        else if (alerta2 < 6) {
+            clearInterval(x);
+            document.getElementById("cor2").style.backgroundColor = "rgb(212, 74, 58)";
+
+        }
+
+
+        else if (alerta2 < 15) {
+            clearInterval(x);
+            document.getElementById("cor2").style.backgroundColor = " rgba(228, 190, 24, 0.863) ";
+
+        }
+
+
+
+        else if (alerta2 > 16) {
+            clearInterval(x);
+            document.getElementById("cor2").style.backgroundColor = "rgb(41,156,70)";;
+
+        }
+    }, 1000);
+
+
+
+    var dead3 = new Date("March  23, 2023").getTime();   //ALTERAR AQUI CLIG SSL//
+
+    var x = setInterval(function () {
+        var now = new Date().getTime();
+        var u = dead3 - now;
+        var days = Math.floor(u / (1000 * 60 * 60 * 24));
+        var alerta3 = (u / (1000 * 60 * 60 * 24));
+
+        document.getElementById("demo3").innerHTML = days + " Dias "
+            ;
+        if (u < 0) {
+            clearInterval(x);
+            document.getElementById("demo3").innerHTML = "EXPIRED";
+        }
+        else if (alerta3 < 6) {
+            clearInterval(x);
+            document.getElementById("cor3").style.backgroundColor = "rgb(212, 74, 58)";
+
+        }
+
+
+        else if (alerta3 < 15) {
+            clearInterval(x);
+            document.getElementById("cor3").style.backgroundColor = " rgba(228, 190, 24, 0.863) ";
+
+        }
+
+
+
+        else if (alerta3 > 16) {
+            clearInterval(x);
+            document.getElementById("cor3").style.backgroundColor = "rgb(41,156,70)";;
+
+        }
+    }, 1000);
+
+    var dead4 = new Date("september 22, 2023").getTime();   //ALTERAR AQUI CLIG DOMNIO//
+
+    var x = setInterval(function () {
+        var now = new Date().getTime();
+        var i = dead4 - now;
+        var days = Math.floor(i / (1000 * 60 * 60 * 24));
+        var alerta4 = (i / (1000 * 60 * 60 * 24));
+
+        document.getElementById("demo4").innerHTML = days + " Dias ";
+        if (i < 0) {
+            clearInterval(x);
+            document.getElementById("demo4").innerHTML = "EXPIRED";
+        }
+        else if (alerta4 < 6) {
+
+
+            clearInterval(x);
+            document.getElementById("cor4").style.backgroundColor = "rgb(212, 74, 58)";
+
+        }
+
+
+        else if (alerta4 < 15) {
+            clearInterval(x);
+            document.getElementById("cor4").style.backgroundColor = " rgba(228, 190, 24, 0.863) ";
+
+        }
+
+
+
+        else if (alerta4 > 16) {
+            clearInterval(x);
+            document.getElementById("cor4").style.backgroundColor ="rgb(41,156,70)";;
+
+        }
+    }, 1000);
+
+
+
+    function alterarData() {
+        var data = document.getElementById("data").value;
+        deadline = new Date(data);
+    }
+
+    function alterarData1() {
+        var data = document.getElementById("data1").value;
+        dead1 = new Date(data);
+    }
+
+    function alterarData2() {
+        var data = document.getElementById("data2").value;
+        dead2 = new Date(data);
+    }
+
+    function alterarData3() {
+        var data = document.getElementById("data3").value;
+        dead3 = new Date(data);
+    }
+
+    function alterarData4() {
+        var data = document.getElementById("data4").value;
+        dead4 = new Date(data);
+
+    }
+
+    //DEIXAR ESSE CODIGO NO FINAL SEMPRE!!!!!!
+    var x = setInterval(function () {
+        var now = new Date().getTime();
+        var p = dead5 - now;
+        var days = Math.floor(p / (1000 * 60 * 60 * 24));
+        var alerta5 = (p / (1000 * 60 * 60 * 24));
+
+
+    }, 1000);
+
+
+
+
+
+
+
+</script>
+
+</body>
+
+</html>
