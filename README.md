@@ -16,8 +16,12 @@ O código JavaScript é responsável pelo funcionamento do contador regressivo. 
 ## Como Utilizar
 
 *Clone este repositório
+
 *Abra o arquivo index.html em seu navegador
+
 *Insira uma data no campo de entrada fornecido
+
 *Clique no botão "OK" para confirmar a data inserida e iniciar o contador regressivo
+
 *Clique no botão "Clear" para limpar o campo de entrada e inserir uma nova data.
 
